@@ -50,7 +50,7 @@ function App() {
 
 	return (
 		<>
-			{location.pathname === "/" ? (
+			{/*location.pathname === "/" ? (
 				<HomeNavbar
 					cartItems={cartItems}
 					onAdd={onAdd}
@@ -78,8 +78,20 @@ function App() {
 					handleCloseLogout={handleCloseLogout}
 					handleLogoutRequest={handleLogoutRequest}
 				/>
-			)}
-			{/* <Header /> */}
+			)*/}
+			<HomeNavbar
+				cartItems={cartItems}
+				onAdd={onAdd}
+				onDelete={onDelete}
+				onDeleteAll={onDeleteAll}
+				onRemove={onRemove}
+				setSignupOpen={setSignupOpen}
+				setLoginOpen={setLoginOpen}
+				anchorEl={anchorEl}
+				handleLogoutClick={handleLogoutClick}
+				handleCloseLogout={handleCloseLogout}
+				handleLogoutRequest={handleLogoutRequest}
+			/>
 			<Switch>
 				<Route path="/products">
 					<ProductsPage onAdd={onAdd} />

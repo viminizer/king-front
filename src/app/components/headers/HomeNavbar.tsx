@@ -13,7 +13,8 @@ import { CartItem } from "../../../libs/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
 import { serverApi } from "../../../libs/config";
 import { Logout } from "@mui/icons-material";
-import "./header.css";
+import ReusableButton from "../other/ResusableButton";
+import { useState } from "react";
 interface HomeNavbarProps {
 	anchorEl: HTMLElement | null;
 	cartItems: CartItem[];
@@ -43,11 +44,14 @@ export function HomeNavbar(props: HomeNavbarProps) {
 		handleLogoutClick,
 	} = props;
 
+	const [isActive, setIsActive] = useState<string>("home");
 	const { authMember } = useGlobals();
 	const imagePath = authMember?.memberImage
 		? `${serverApi}/${authMember?.memberImage}`
 		: "icons/default-user.svg";
 
+	/**HANDLERS */
+	const isActiveHandler = (str: string) => setIsActive(str);
 	return (
 		<div className="home-navbar">
 			<Container className="navbar-container">
@@ -58,32 +62,39 @@ export function HomeNavbar(props: HomeNavbarProps) {
 						</NavLink>
 					</Box>
 					<Stack className="links">
-						<Box className={"nav-link"}>
-							<NavLink to="/" activeClassName={"active"}>
-								Home
-							</NavLink>
-						</Box>
-						<Box className={"nav-link"}>
-							<NavLink to="/products" activeClassName={"underline"}>
-								Products
-							</NavLink>
-						</Box>
+						{["Home", "Products"].map((ele) => (
+							<Box
+								className={isActive === ele.toLowerCase() ? "active-link" : "nav-link"}
+								onClick={() => isActiveHandler(ele.toLocaleLowerCase())}
+							>
+								<NavLink to={`/${ele.toLocaleLowerCase()}`}>{ele}</NavLink>
+							</Box>
+						))}
 						{authMember ? (
-							<Box className={"nav-link"}>
-								<NavLink to="/orders" activeClassName={"underline"}>
+							<Box
+								className={isActive === "orders" ? "active-link" : "nav-link"}
+								onClick={() => isActiveHandler("orders")}
+							>
+								<NavLink to="/orders" activeClassName={""}>
 									Orders
 								</NavLink>
 							</Box>
 						) : null}
 						{authMember ? (
-							<Box className={"nav-link"}>
-								<NavLink to="/member-page" activeClassName={"underline"}>
+							<Box
+								className={isActive === "member-page" ? "active-link" : "nav-link"}
+								onClick={() => isActiveHandler("member-page")}
+							>
+								<NavLink to="/member-page" activeClassName={""}>
 									My Page
 								</NavLink>
 							</Box>
 						) : null}
-						<Box className={"nav-link"}>
-							<NavLink to="/help" activeClassName={"underline"}>
+						<Box
+							className={isActive === "help" ? "active-link" : "nav-link"}
+							onClick={() => isActiveHandler("help")}
+						>
+							<NavLink to="/help" activeClassName={""}>
 								Help
 							</NavLink>
 						</Box>
@@ -96,13 +107,13 @@ export function HomeNavbar(props: HomeNavbarProps) {
 						/>
 						{!authMember ? (
 							<Box>
-								<Button
-									variant="contained"
-									className="login-button"
-									onClick={() => setLoginOpen(true)}
+								<ReusableButton
+									width={150}
+									height={40}
+									handleClick={() => setLoginOpen(true)}
 								>
 									Login
-								</Button>
+								</ReusableButton>
 							</Box>
 						) : (
 							<img

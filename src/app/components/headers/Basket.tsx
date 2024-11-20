@@ -81,10 +81,10 @@ export default function Basket(props: BasketProps) {
 				aria-controls={open ? "basic-menu" : undefined}
 				aria-haspopup="true"
 				aria-expanded={open ? "true" : undefined}
-				className="icon-btn"
+				className="cart-btn"
 				onClick={handleClick}
 			>
-				<Badge badgeContent={3} classes={{ badge: "cart-number" }}>
+				<Badge badgeContent={cartItems.length} classes={{ badge: "cart-number" }}>
 					<ShoppingBag sx={{ color: "#ff8243" }} />
 				</Badge>
 			</IconButton>

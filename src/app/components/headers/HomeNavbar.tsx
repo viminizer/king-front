@@ -8,13 +8,13 @@ import {
 	MenuItem,
 	Stack,
 } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { CartItem } from "../../../libs/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
 import { serverApi } from "../../../libs/config";
 import { Logout } from "@mui/icons-material";
 import ReusableButton from "../other/ResusableButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 interface HomeNavbarProps {
 	anchorEl: HTMLElement | null;
 	cartItems: CartItem[];
@@ -30,6 +30,7 @@ interface HomeNavbarProps {
 }
 
 export function HomeNavbar(props: HomeNavbarProps) {
+	const location = useLocation();
 	const {
 		cartItems,
 		onAdd,
@@ -44,16 +45,33 @@ export function HomeNavbar(props: HomeNavbarProps) {
 		handleLogoutClick,
 	} = props;
 
-	const [isActive, setIsActive] = useState<string>("home");
+	const [isActive, setIsActive] = useState<string>(
+		location.pathname === "/" ? "home" : location.pathname
+	);
+	console.log("IS active", isActive);
+	const [isScrolled, setIsScrolled] = useState<boolean>(false);
 	const { authMember } = useGlobals();
 	const imagePath = authMember?.memberImage
 		? `${serverApi}/${authMember?.memberImage}`
 		: "icons/default-user.svg";
 
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	/**HANDLERS */
 	const isActiveHandler = (str: string) => setIsActive(str);
+
+	const handleScroll = () => {
+		if (window.scrollY > 50) setIsScrolled(true);
+		else setIsScrolled(false);
+	};
+
 	return (
-		<div className="home-navbar">
+		<div className={`home-navbar ${isScrolled ? "scrolled" : ""}`}>
 			<Container className="navbar-container">
 				<Stack className="menu">
 					<Box>
@@ -64,7 +82,9 @@ export function HomeNavbar(props: HomeNavbarProps) {
 					<Stack className="links">
 						{["Home", "Products"].map((ele) => (
 							<Box
-								className={isActive === ele.toLowerCase() ? "active-link" : "nav-link"}
+								className={
+									isActive === `${ele.toLowerCase()}` ? "active-link" : "nav-link"
+								}
 								onClick={() => isActiveHandler(ele.toLocaleLowerCase())}
 							>
 								<NavLink to={`/${ele.toLocaleLowerCase()}`}>{ele}</NavLink>

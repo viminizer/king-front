@@ -54,6 +54,8 @@ export default function HomePage() {
 			.getTopUsers()
 			.then((data: Member[]) => setTopUsers(data))
 			.catch((err) => console.log(err));
+
+		window.scrollTo(0, 0);
 	}, []);
 	return (
 		<div className="homepage">

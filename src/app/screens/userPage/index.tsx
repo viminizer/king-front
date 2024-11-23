@@ -9,13 +9,15 @@ import { useGlobals } from "../../hooks/useGlobals";
 import { MemberType } from "../../../libs/enums/member.enum";
 import { serverApi } from "../../../libs/config";
 import "../../../css/userPage.css";
+import { useEffect } from "react";
 
 export default function UserPage() {
 	const history = useHistory();
 	const { authMember } = useGlobals();
-
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 	if (!authMember) history.push("/");
-	console.log("authMember", authMember);
 	return (
 		<div className={"user-page"}>
 			<Container>

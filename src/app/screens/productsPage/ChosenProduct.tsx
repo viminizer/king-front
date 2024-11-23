@@ -70,6 +70,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
 				setRestaurant(data);
 			})
 			.catch((err) => console.log(err));
+		window.scrollTo(0, 0);
 	}, []);
 	if (!chosenProduct) return null;
 	return (

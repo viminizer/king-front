@@ -29,6 +29,14 @@ interface HomeNavbarProps {
 	handleLogoutRequest: () => void;
 }
 
+function slashRemover(str: string): string {
+	const arr = str.split("");
+	if (arr[0] === "/") {
+		arr.shift();
+		return arr.join("");
+	} else return arr.join("");
+}
+
 export function HomeNavbar(props: HomeNavbarProps) {
 	const location = useLocation();
 	const {
@@ -46,7 +54,7 @@ export function HomeNavbar(props: HomeNavbarProps) {
 	} = props;
 
 	const [isActive, setIsActive] = useState<string>(
-		location.pathname === "/" ? "home" : location.pathname
+		location.pathname === "/" ? "home" : slashRemover(location.pathname)
 	);
 	console.log("IS active", isActive);
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -95,9 +103,7 @@ export function HomeNavbar(props: HomeNavbarProps) {
 								className={isActive === "orders" ? "active-link" : "nav-link"}
 								onClick={() => isActiveHandler("orders")}
 							>
-								<NavLink to="/orders" activeClassName={""}>
-									Orders
-								</NavLink>
+								<NavLink to="/orders">Orders</NavLink>
 							</Box>
 						) : null}
 						{authMember ? (
@@ -105,18 +111,14 @@ export function HomeNavbar(props: HomeNavbarProps) {
 								className={isActive === "member-page" ? "active-link" : "nav-link"}
 								onClick={() => isActiveHandler("member-page")}
 							>
-								<NavLink to="/member-page" activeClassName={""}>
-									My Page
-								</NavLink>
+								<NavLink to="/member-page">My Page</NavLink>
 							</Box>
 						) : null}
 						<Box
 							className={isActive === "help" ? "active-link" : "nav-link"}
 							onClick={() => isActiveHandler("help")}
 						>
-							<NavLink to="/help" activeClassName={""}>
-								Help
-							</NavLink>
+							<NavLink to="/help">Help</NavLink>
 						</Box>
 						<Basket
 							cartItems={cartItems}

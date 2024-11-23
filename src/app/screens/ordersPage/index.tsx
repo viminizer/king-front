@@ -64,6 +64,7 @@ export default function OrdersPage() {
 			})
 			.then((data) => setFinishedOrders(data))
 			.catch((err) => console.log(err));
+		window.scrollTo(0, 0);
 	}, [orderBuilder, orderInquiry]);
 
 	/**Handlers */

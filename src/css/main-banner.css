@@ -1,0 +1,138 @@
+.main-banner {
+	font-family: "Poppins";
+	padding: 200px 0 300px;
+	min-height: 100vh;
+	position: relative;
+}
+
+.js-parallax-scene {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.banner-shape-1 img {
+	position: absolute;
+	left: 85%;
+	top: 60px;
+	max-width: 150px;
+	pointer-events: none;
+	filter: blur(3px);
+}
+
+.banner-shape-2 img {
+	position: absolute;
+	bottom: 0;
+	right: 82%;
+	max-width: 410px;
+	pointer-events: none;
+	filter: blur(3px);
+}
+
+.sec-wp {
+	position: relative;
+	z-index: 4;
+}
+
+.sec-wp .h1-title {
+	font-size: 90px;
+	line-height: 108px;
+	text-transform: capitalize;
+	margin-bottom: 25px;
+	font-weight: 900;
+	color: #0d0d25;
+	font-family: "Playfair Display", serif;
+}
+
+.sec-wp .h1-title span {
+	color: #ff8243;
+	background-image: linear-gradient(0deg, rgb(13 13 37 / 8%), rgb(13 13 37 / 8%));
+	background-size: 100% 15px;
+	background-position: 0 90%;
+	background-repeat: no-repeat;
+	display: inline;
+	transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);
+}
+.sec-wp .banner-description {
+	font-family: "Poppins";
+	font-size: 16px;
+	line-height: 30px;
+	margin-bottom: 30px;
+}
+
+.sec-wp .sec-btn {
+	margin-top: 32px;
+	min-width: 120px;
+	min-height: 58px;
+	background: #f3f3f5;
+	box-shadow: 9px 9px 12px #b2b2b3, -9px -9px 12px #ffffff;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 30px;
+	color: #0d0d25;
+	text-transform: capitalize;
+	text-align: center;
+	border: none;
+	cursor: pointer;
+	padding: 6px 30px;
+	transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);
+}
+
+.sec-wp .sec-btn:hover {
+	box-shadow: inset 9px 9px 12px #cccccc, inset -9px -9px 12px #ffffff;
+	color: #0d0d25;
+}
+
+.sec-wp .banner-img-wp {
+	width: 100%;
+	height: 100%;
+	padding-left: 30px;
+}
+
+.banner-img {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-image: url("/public/img/main-b.jpg");
+	box-shadow: 0 0px 20px rgba(36, 39, 37, 0.3);
+	animation: biani 4.5s linear infinite alternate;
+}
+
+@keyframes biani {
+	0% {
+		border-radius: 48% 52% 57% 43% / 34% 44% 56% 66%;
+	}
+	25% {
+		border-radius: 62% 38% 64% 36% / 34% 55% 45% 66%;
+	}
+	50% {
+		border-radius: 43% 57% 51% 49% / 33% 42% 58% 67%;
+	}
+	100% {
+		border-radius: 40% 60% 43% 57% / 52% 32% 68% 48%;
+	}
+}
+
+.banner-img-text {
+	max-width: 400px;
+	margin-top: 32px;
+	margin: auto;
+}
+
+.banner-img-text .h5-title {
+	font-family: "Poppins";
+	text-transform: capitalize;
+	letter-spacing: 0.5px;
+	color: #0d0d25;
+	font-weight: 900;
+}
+
+.banner-img-text p {
+	font-family: "Poppins";
+	font-size: 16px;
+	line-height: 30px;
+}

@@ -18,6 +18,7 @@ import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
 import Header from "./components/headers/HomeHeader";
+import MainBanner from "./components/other/MainBanner";
 
 function App() {
 	const location = useLocation();
@@ -92,6 +93,7 @@ function App() {
 				handleCloseLogout={handleCloseLogout}
 				handleLogoutRequest={handleLogoutRequest}
 			/>
+			<MainBanner />
 			<Switch>
 				<Route path="/products">
 					<ProductsPage onAdd={onAdd} />

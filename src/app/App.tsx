@@ -8,17 +8,15 @@ import Footer from "./components/footer";
 import useBasket from "./hooks/useBasket";
 import AuthenticationModal from "./components/auth";
 import MemberService from "./services/MemberService";
+import MainBanner from "./components/other/MainBanner";
 import { Route, Switch, useLocation } from "react-router-dom";
 import { HomeNavbar } from "./components/headers/HomeNavbar";
-import { OtherNavbar } from "./components/headers/OtherNavbar";
 import { sweetErrorHandling, sweetTopSuccessAlert } from "../libs/sweetAlert";
 import { Messages } from "../libs/config";
 import { useGlobals } from "./hooks/useGlobals";
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
-import Header from "./components/headers/HomeHeader";
-import MainBanner from "./components/other/MainBanner";
 
 function App() {
 	const location = useLocation();
@@ -51,35 +49,6 @@ function App() {
 
 	return (
 		<>
-			{/*location.pathname === "/" ? (
-				<HomeNavbar
-					cartItems={cartItems}
-					onAdd={onAdd}
-					onDelete={onDelete}
-					onDeleteAll={onDeleteAll}
-					onRemove={onRemove}
-					setSignupOpen={setSignupOpen}
-					setLoginOpen={setLoginOpen}
-					anchorEl={anchorEl}
-					handleLogoutClick={handleLogoutClick}
-					handleCloseLogout={handleCloseLogout}
-					handleLogoutRequest={handleLogoutRequest}
-				/>
-			) : (
-				<OtherNavbar
-					cartItems={cartItems}
-					onAdd={onAdd}
-					onDelete={onDelete}
-					onDeleteAll={onDeleteAll}
-					onRemove={onRemove}
-					setSignupOpen={setSignupOpen}
-					setLoginOpen={setLoginOpen}
-					anchorEl={anchorEl}
-					handleLogoutClick={handleLogoutClick}
-					handleCloseLogout={handleCloseLogout}
-					handleLogoutRequest={handleLogoutRequest}
-				/>
-			)*/}
 			<HomeNavbar
 				cartItems={cartItems}
 				onAdd={onAdd}
@@ -93,7 +62,7 @@ function App() {
 				handleCloseLogout={handleCloseLogout}
 				handleLogoutRequest={handleLogoutRequest}
 			/>
-			<MainBanner />
+			{location.pathname === "/" ? <MainBanner /> : <></>}
 			<Switch>
 				<Route path="/products">
 					<ProductsPage onAdd={onAdd} />

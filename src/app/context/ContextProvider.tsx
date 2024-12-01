@@ -13,10 +13,18 @@ const ContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 	);
 
 	const [orderBuilder, setOrderBuilder] = useState<Date>(new Date());
+	const [activeTab, setActiveTab] = useState<string>("");
 
 	return (
 		<GlobalContext.Provider
-			value={{ authMember, setAuthMember, orderBuilder, setOrderBuilder }}
+			value={{
+				authMember,
+				setAuthMember,
+				orderBuilder,
+				setOrderBuilder,
+				activeTab,
+				setActiveTab,
+			}}
 		>
 			{children}
 		</GlobalContext.Provider>

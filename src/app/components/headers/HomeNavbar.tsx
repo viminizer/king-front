@@ -53,17 +53,14 @@ export function HomeNavbar(props: HomeNavbarProps) {
 		handleLogoutClick,
 	} = props;
 
-	const [isActive, setIsActive] = useState<string>(
-		location.pathname === "/" ? "home" : slashRemover(location.pathname)
-	);
-	console.log("IS active", isActive);
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
-	const { authMember } = useGlobals();
+	const { authMember, activeTab, setActiveTab } = useGlobals();
 	const imagePath = authMember?.memberImage
 		? `${serverApi}/${authMember?.memberImage}`
 		: "icons/default-user.svg";
 
 	useEffect(() => {
+		setActiveTab(slashRemover(location.pathname));
 		window.addEventListener("scroll", handleScroll);
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
@@ -71,7 +68,7 @@ export function HomeNavbar(props: HomeNavbarProps) {
 	}, []);
 
 	/**HANDLERS */
-	const isActiveHandler = (str: string) => setIsActive(str);
+	const isActiveHandler = (str: string) => setActiveTab(str);
 
 	const handleScroll = () => {
 		if (window.scrollY > 50) setIsScrolled(true);
@@ -88,38 +85,42 @@ export function HomeNavbar(props: HomeNavbarProps) {
 						</NavLink>
 					</Box>
 					<Stack className="links">
-						{["Home", "Products"].map((ele) => (
-							<Box
+						{["", "Products"].map((ele) => (
+							<NavLink
 								className={
-									isActive === `${ele.toLowerCase()}` ? "active-link" : "nav-link"
+									activeTab === `${ele.toLowerCase()}` ? "active-link" : "nav-link"
 								}
+								to={`/${ele.toLocaleLowerCase()}`}
 								onClick={() => isActiveHandler(ele.toLocaleLowerCase())}
 							>
-								<NavLink to={`/${ele.toLocaleLowerCase()}`}>{ele}</NavLink>
-							</Box>
+								{ele ? ele : "Home"}
+							</NavLink>
 						))}
 						{authMember ? (
-							<Box
-								className={isActive === "orders" ? "active-link" : "nav-link"}
+							<NavLink
+								to="/orders"
+								className={activeTab === "orders" ? "active-link" : "nav-link"}
 								onClick={() => isActiveHandler("orders")}
 							>
-								<NavLink to="/orders">Orders</NavLink>
-							</Box>
+								Orders
+							</NavLink>
 						) : null}
 						{authMember ? (
-							<Box
-								className={isActive === "member-page" ? "active-link" : "nav-link"}
+							<NavLink
+								className={activeTab === "member-page" ? "active-link" : "nav-link"}
+								to="/member-page"
 								onClick={() => isActiveHandler("member-page")}
 							>
-								<NavLink to="/member-page">My Page</NavLink>
-							</Box>
+								My Page
+							</NavLink>
 						) : null}
-						<Box
-							className={isActive === "help" ? "active-link" : "nav-link"}
+						<NavLink
+							to="/help"
+							className={activeTab === "help" ? "active-link" : "nav-link"}
 							onClick={() => isActiveHandler("help")}
 						>
-							<NavLink to="/help">Help</NavLink>
-						</Box>
+							Help
+						</NavLink>
 						<Basket
 							cartItems={cartItems}
 							onAdd={onAdd}

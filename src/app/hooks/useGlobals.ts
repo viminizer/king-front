@@ -6,6 +6,8 @@ export interface GlobalInteface {
 	setAuthMember: (member: Member | null) => void;
 	orderBuilder: Date;
 	setOrderBuilder: (input: Date) => void;
+	activeTab: string;
+	setActiveTab: (input: string) => void;
 }
 
 export const GlobalContext = createContext<GlobalInteface | undefined>(undefined);

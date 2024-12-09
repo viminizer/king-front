@@ -8,17 +8,24 @@ import { useSelector } from "react-redux";
 import { serverApi } from "../../../libs/config";
 import { Product } from "../../../libs/types/product";
 import { ProductCollection } from "../../../libs/enums/product.enum";
+import { useHistory } from "react-router-dom";
 
 const newDishesRetriever = createSelector(retrieveNewDishes, (newDishes) => ({
 	newDishes,
 }));
 export function NewDishes() {
 	const { newDishes } = useSelector(newDishesRetriever);
+	const history = useHistory();
+
+	/**Handlers */
+	const chosenDishHandler = (id: string) => {
+		history.push(`/products/${id}`);
+	};
 	return (
 		<div className="new-products-frame">
 			<Container>
 				<Stack className="main">
-					<Box className="category-title">Fresh Menu</Box>
+					<Box className="category-title">New Menu</Box>
 					<Stack className="cards-frame">
 						<CssVarsProvider>
 							{newDishes.length !== 0 ? (
@@ -29,7 +36,12 @@ export function NewDishes() {
 											? ele.productVolume + " L"
 											: ele.productSize + " SIZE";
 									return (
-										<Card key={ele._id} variant="outlined" className="card">
+										<Card
+											key={ele._id}
+											variant="outlined"
+											className="card"
+											onClick={() => chosenDishHandler(ele._id)}
+										>
 											<CardOverflow>
 												<div className="product-scale">{sizeVolume}</div>
 												<AspectRatio ratio="1">

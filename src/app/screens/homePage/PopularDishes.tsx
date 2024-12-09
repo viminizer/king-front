@@ -45,7 +45,7 @@ export default function PopularDishes() {
 											<CardCover className="card-cover" />
 											<CardContent sx={{ justifyContent: "flex-end" }}>
 												<Stack flexDirection={"row"} justifyContent={"space-between"}>
-													<Typography level="h2" fontSize="lg" textColor="#fff" mb={1}>
+													<Typography level="h2" fontSize="xl" textColor="#fff" mb={1}>
 														{ele.productName}
 													</Typography>
 													<Typography

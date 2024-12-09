@@ -29,8 +29,7 @@ export default function Footer() {
 						</Box>
 						<Box className={"foot-desc-txt"}>
 							Focusing on the gourmet Turkish breakfast as well as the youth society, King
-							Kebab aims to bring Turkish cuisine back. King Kebab creates an illusion
-							with its cuisine.
+							Kebab aims to bring Turkish cuisine back.{" "}
 						</Box>
 						<Box className="sns-context">
 							<MuiLink href={"https://instagram.com/kingkebab.korea"} target="_blank">
@@ -47,7 +46,7 @@ export default function Footer() {
 					<Stack sx={{ ml: "288px" }} flexDirection={"row"}>
 						<Stack>
 							<Box>
-								<Box className={"foot-category-title"}>Bo'limlar</Box>
+								<Box className={"foot-category-title"}>Sections</Box>
 								<Box className={"foot-category-link"}>
 									<Link to="/">Home</Link>
 									<Link to="/products">Products</Link>

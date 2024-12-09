@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Facebook, Instagram, YouTube } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import MuiLink from "@material-ui/core/Link";
+import { useGlobals } from "../../hooks/useGlobals";
 
 const Footers = styled.div`
 	width: 100%;
@@ -14,7 +15,7 @@ const Footers = styled.div`
 `;
 
 export default function Footer() {
-	const authMember = null;
+	const { authMember, setActiveTab } = useGlobals();
 	return (
 		<Footers>
 			<Container>
@@ -45,10 +46,20 @@ export default function Footer() {
 							<Box>
 								<Box className={"foot-category-title"}>Bo'limlar</Box>
 								<Box className={"foot-category-link"}>
-									<Link to="/">Home</Link>
-									<Link to="/products">Products</Link>
-									{authMember && <Link to="/orders">Orders</Link>}
-									<Link to="/help">Help</Link>
+									<Link to="/" onClick={() => setActiveTab("")}>
+										Home
+									</Link>
+									<Link to="/products" onClick={() => setActiveTab("products")}>
+										Products
+									</Link>
+									{authMember && (
+										<Link to="/orders" onClick={() => setActiveTab("orders")}>
+											Orders
+										</Link>
+									)}
+									<Link to="/help" onClick={() => setActiveTab("help")}>
+										Help
+									</Link>
 								</Box>
 							</Box>
 						</Stack>

@@ -22,6 +22,7 @@ import { ProductCollection } from "../../../libs/enums/product.enum";
 import { useHistory } from "react-router-dom";
 import { CartItem } from "../../../libs/types/search";
 import "../../../css/products.css";
+import { useGlobals } from "../../hooks/useGlobals";
 
 const actionDispatch = (dispatch: Dispatch) => ({
 	setProducts: (products: Product[]) => dispatch(setProducts(products)),
@@ -48,8 +49,10 @@ export function Products(props: ProductsProps) {
 	});
 	const [searchText, setSearchText] = useState<string>("");
 	const history = useHistory();
+	const { setActiveTab } = useGlobals();
 
 	useEffect(() => {
+		setActiveTab("products");
 		const productService = new ProductService();
 		productService
 			.getProducts(productSearch)
@@ -94,7 +97,7 @@ export function Products(props: ProductsProps) {
 
 	return (
 		<div className="products">
-			<Container>
+			<Container sx={{ mt: "150px" }}>
 				<Stack flexDirection={"column"} alignItems={"center"}>
 					<Stack className={"avatar-big-box"}>
 						<Stack className={"top-text"}>

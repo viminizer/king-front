@@ -25,7 +25,7 @@ const actionDispatch = (dispatch: Dispatch) => ({
 
 export default function OrdersPage() {
 	const [value, setValue] = useState("1");
-	const { authMember, orderBuilder } = useGlobals();
+	const { authMember, orderBuilder, setActiveTab } = useGlobals();
 	const history = useHistory();
 	const [orderInquiry, setOrderInquiry] = useState<OrderInquiry>({
 		page: 1,
@@ -38,6 +38,7 @@ export default function OrdersPage() {
 	);
 
 	useEffect(() => {
+		setActiveTab("orders");
 		const order = new OrderService();
 		order
 			.getMyOrders({

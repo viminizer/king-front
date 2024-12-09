@@ -60,6 +60,7 @@
 	transition: 0.3s;
 	background: #f3f3f5;
 	box-shadow: inset 8px 8px 12px #e2e2e2, inset -8px -8px 12px #ffffff;
+	color: #ff8243;
 }
 .active-link a {
 	text-decoration: none;

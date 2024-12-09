@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Container, Grid, Typography, Button } from "@mui/material";
 import "../../../css/main-banner.css";
 import ReusableButton from "./ResusableButton";
@@ -11,8 +11,10 @@ const MainBanner = () => {
 	/** Handlers */
 	const checkMenuHandler = () => {
 		history.push("/products");
-		setActiveTab("products");
 	};
+	useEffect(() => {
+		setActiveTab("");
+	}, []);
 	return (
 		<Box component="section" className="main-banner" id="home">
 			{/* Main Content */}

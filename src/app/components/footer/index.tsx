@@ -10,12 +10,12 @@ const Footers = styled.div`
 	width: 100%;
 	height: 590px;
 	display: flex;
-	background: #f3f3f5;
+	background: #ffffff;
 	background-size: cover;
 `;
 
 export default function Footer() {
-	const { authMember, setActiveTab } = useGlobals();
+	const { authMember } = useGlobals();
 	return (
 		<Footers>
 			<Container>
@@ -25,9 +25,9 @@ export default function Footer() {
 							<img width={"100px"} src={"/icons/burak.svg"} />
 						</Box>
 						<Box className={"foot-desc-txt"}>
-							Focusing on the gourmet Turkish breakfast as well as the youth society, CZN
-							Burak Gurme aims to bring Turkish cuisine back. CZN Burak Gurme creates an
-							illusion with its cuisine.
+							Focusing on the gourmet Turkish breakfast as well as the youth society, King
+							Kebab aims to bring Turkish cuisine back. King Kebab creates an illusion
+							with its cuisine.
 						</Box>
 						<Box className="sns-context">
 							<MuiLink href={"https://instagram.com/kingkebab.korea"} target="_blank">
@@ -36,7 +36,7 @@ export default function Footer() {
 							<MuiLink href={"https://instagram.com/kingkebab.korea"} target="_blank">
 								<Instagram className="sns-icon" />
 							</MuiLink>
-							<MuiLink href={"https://instagram.com/kingkebab.korea"} target="_blank">
+							<MuiLink href={"https://youtube.com/@kingkebab_korea"} target="_blank">
 								<YouTube className="sns-icon" />
 							</MuiLink>
 						</Box>
@@ -46,20 +46,10 @@ export default function Footer() {
 							<Box>
 								<Box className={"foot-category-title"}>Bo'limlar</Box>
 								<Box className={"foot-category-link"}>
-									<Link to="/" onClick={() => setActiveTab("")}>
-										Home
-									</Link>
-									<Link to="/products" onClick={() => setActiveTab("products")}>
-										Products
-									</Link>
-									{authMember && (
-										<Link to="/orders" onClick={() => setActiveTab("orders")}>
-											Orders
-										</Link>
-									)}
-									<Link to="/help" onClick={() => setActiveTab("help")}>
-										Help
-									</Link>
+									<Link to="/">Home</Link>
+									<Link to="/products">Products</Link>
+									{authMember && <Link to="/orders">Orders</Link>}
+									<Link to="/help">Help</Link>
 								</Box>
 							</Box>
 						</Stack>
@@ -74,15 +64,15 @@ export default function Footer() {
 								>
 									<Box flexDirection={"row"} className={"find-us"}>
 										<span>L.</span>
-										<div>Downtown, Dubai</div>
+										<div>Itaewon Station, Exit 3</div>
 									</Box>
 									<Box className={"find-us"}>
 										<span>P.</span>
-										<div>+971 4 554 7777</div>
+										<div>+82(0) 10 3925 9779</div>
 									</Box>
 									<Box className={"find-us"}>
 										<span>E.</span>
-										<div>devexuz@gmail.com</div>
+										<div>ruxcodes@gmail.com</div>
 									</Box>
 									<Box className={"find-us"}>
 										<span>H.</span>
@@ -98,7 +88,7 @@ export default function Footer() {
 					sx={{ mt: "80px" }}
 				></Stack>
 				<Stack className={"copyright-txt"}>
-					© Copyright Devex Global, All rights reserved.
+					© Copyright King Kebab Korea, All rights reserved.
 					{"  "}
 					{new Date().getFullYear()}
 				</Stack>

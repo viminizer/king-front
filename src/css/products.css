@@ -2,7 +2,6 @@
 	position: relative;
 	width: 100%;
 	height: auto;
-	background-color: #f8f8ff;
 }
 
 /** Products*/
@@ -10,7 +9,6 @@
 	width: 100%;
 	height: auto;
 	display: flex;
-	background: #f8f8ff;
 	flex-direction: column;
 }
 .products-page .products .avatar-big-box {

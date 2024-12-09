@@ -12,15 +12,19 @@ import { Box, Container, Stack, Tabs } from "@mui/material";
 import { faq } from "../../../libs/data/faq";
 import { terms } from "../../../libs/data/terms";
 import "../../../css/help.css";
+import { useGlobals } from "../../hooks/useGlobals";
 
 export default function HelpPage() {
 	const [value, setValue] = React.useState("1");
+	const { setActiveTab } = useGlobals();
 
 	/** HANDLERS **/
 	const handleChange = (e: React.SyntheticEvent, newValue: string) => {
 		setValue(newValue);
 	};
 	useEffect(() => {
+		setActiveTab("help");
+
 		window.scrollTo(0, 0);
 	}, []);
 

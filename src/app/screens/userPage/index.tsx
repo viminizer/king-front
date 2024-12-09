@@ -13,8 +13,9 @@ import { useEffect } from "react";
 
 export default function UserPage() {
 	const history = useHistory();
-	const { authMember } = useGlobals();
+	const { authMember, setActiveTab } = useGlobals();
 	useEffect(() => {
+		setActiveTab("member-page");
 		window.scrollTo(0, 0);
 	}, []);
 	if (!authMember) history.push("/");

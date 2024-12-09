@@ -60,6 +60,9 @@
 	text-decoration: none;
 	cursor: pointer;
 }
+.foot-category-link a:hover {
+	color: #0d0d25;
+}
 
 .find-us {
 	display: flex;

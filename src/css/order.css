@@ -1,8 +1,8 @@
 .order-page {
 	width: 100%;
 	height: auto;
-	background: #f8f8ff;
 	display: flex;
+	margin-top: 150px;
 }
 
 .order-page .order-container {
@@ -180,8 +180,7 @@
 	max-height: 285px;
 	margin-bottom: 25px;
 	background: #f8f8ff;
-	box-shadow: -13px 16px 4px rgba(0, 0, 0, 0.25),
-		inset 0px -3px 20px 11px #18177033;
+	box-shadow: -13px 16px 4px rgba(0, 0, 0, 0.25), inset 0px -3px 20px 11px #18177033;
 	border-radius: 16px;
 }
 
@@ -198,10 +197,7 @@
 	overflow-y: scroll;
 }
 
-.order-page
-	.order-main-content
-	.order-main-box
-	.order-box-scroll::-webkit-scrollbar {
+.order-page .order-main-content .order-main-box .order-box-scroll::-webkit-scrollbar {
 	width: 7px;
 }
 
@@ -296,8 +292,7 @@
 	background: #0288d1;
 	color: #f8f8ff;
 	border-radius: 10px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-		inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .order-page .order-main-content .order-main-box .total-price-box .box-total {

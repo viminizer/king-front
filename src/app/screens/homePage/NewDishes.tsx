@@ -41,7 +41,9 @@ export function NewDishes() {
 													<Stack flexDirection={"row"}>
 														<Typography className="title">{ele.productName}</Typography>
 														<Divider width="2" height="24" bg="#d9d9d9" />
-														<Typography className="price">{ele.productPrice}</Typography>
+														<Typography className="price">
+															₩{ele.productPrice}000
+														</Typography>
 													</Stack>
 													<Stack>
 														<Typography className="views">

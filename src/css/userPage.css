@@ -2,7 +2,7 @@
 	width: 100%;
 	height: auto;
 	display: flex;
-	background: #f8f8ff;
+	margin-top: 150px;
 }
 
 .user-page .css-heg063-MuiTabs-flexContainer {
@@ -39,11 +39,11 @@
 	display: flex;
 	justify-content: center;
 	border-bottom: 1px solid #f8f8ff;
-	font-family: 'Poppins';
+	font-family: "Poppins";
 	font-style: normal;
 	font-weight: 600;
 	font-size: 45px;
-	color: #f8f8ff;
+	color: #0d0d25;
 }
 
 .my-page-left .menu-content {
@@ -87,7 +87,8 @@
 	flex-direction: column;
 	align-items: center;
 	background: #f6f2ff;
-	box-shadow: 15px 14px 4px rgba(0, 0, 0, 0.25), inset -1px 0px 16px 13px rgb(24 23 112 / 20%);
+	box-shadow: 15px 14px 4px rgba(0, 0, 0, 0.25),
+		inset -1px 0px 16px 13px rgb(24 23 112 / 20%);
 	border-radius: 16px;
 }
 
@@ -126,7 +127,7 @@
 
 .user-page .order-info-box .order-user-name {
 	margin-top: 10px;
-	font-family: 'Commissioner';
+	font-family: "Commissioner";
 	font-style: normal;
 	font-weight: 500;
 	font-size: 28px;
@@ -135,7 +136,7 @@
 }
 
 .user-page .order-info-box .order-user-prof {
-	font-family: 'Commissioner';
+	font-family: "Commissioner";
 	font-style: normal;
 	font-weight: 500;
 	font-size: 20px;
@@ -156,7 +157,7 @@
 	width: 90%;
 	display: flex;
 	justify-content: center;
-	font-family: 'DM Sans';
+	font-family: "DM Sans";
 	font-style: normal;
 	font-weight: 400;
 	font-size: 16px;
@@ -182,7 +183,7 @@
 
 .user-page .menu-box span {
 	margin-left: 30px;
-	font-family: 'Poppins';
+	font-family: "Poppins";
 	font-style: normal;
 	font-weight: 600;
 	font-size: 25px;
@@ -219,7 +220,7 @@
 	flex-direction: column;
 }
 .user-page .settings .spec-label {
-	font-family: 'Source Serif Pro';
+	font-family: "Source Serif Pro";
 	font-style: normal;
 	font-weight: 400;
 	font-size: 16px;
@@ -237,7 +238,7 @@
 	background: #f7f7f7;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
-	font-family: 'GT Walsheim Pro';
+	font-family: "GT Walsheim Pro";
 	font-style: normal;
 	font-weight: 400;
 	font-size: 15px;
@@ -255,7 +256,7 @@
 	background: #f7f7f7;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
-	font-family: 'GT Walsheim Pro';
+	font-family: "GT Walsheim Pro";
 	font-style: normal;
 	font-weight: 400;
 	font-size: 15px;
@@ -289,7 +290,7 @@
 }
 
 .user-page .settings .media-change-box span {
-	font-family: 'GT Walsheim Pro';
+	font-family: "GT Walsheim Pro";
 	font-style: normal;
 	font-weight: 400;
 	font-size: 16px;
@@ -299,7 +300,7 @@
 
 .user-page .settings .media-change-box p {
 	margin: 10px 0px 14px 0px;
-	font-family: 'GT Walsheim Pro';
+	font-family: "GT Walsheim Pro";
 	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;

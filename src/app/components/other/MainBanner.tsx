@@ -25,12 +25,16 @@ const MainBanner = () => {
 						<Grid item xs={12} md={6}>
 							<Box>
 								<Typography variant="h1" className="h1-title">
-									Welcome to <span>King Kebab</span> restaurant.
+									Welcome to <span>King Kebab</span>
 								</Typography>
 								<Typography className="banner-description">
-									This is Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Numquam eius vel tempore consectetur nesciunt? Nam eius tenetur
-									recusandae optio aperiam.
+									Step into the royal court of flavor at King Kebab, where every bite
+									reigns supreme! Our restaurant specializes in authentic Turkish cuisine,
+									bringing you a feast fit for a king.
+								</Typography>
+								<Typography className="banner-description">
+									Join us for a truly majestic dining experience—because at King Kebab,
+									you're always treated like royalty! 👑
 								</Typography>
 								<ReusableButton height={70} width={250} handleClick={checkMenuHandler}>
 									Check our menu
@@ -45,10 +49,11 @@ const MainBanner = () => {
 							</Box>
 							<Box className="banner-img-text">
 								<Typography variant="h5" className="h5-title">
-									Sushi
+									Mix Grill Kebab
 								</Typography>
-								<Typography>
-									This is Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								<Typography className="banner-description">
+									Mouthwatering assortment of perfectly grilled lamb and chicken marinated
+									in traditional spices.
 								</Typography>
 							</Box>
 						</Grid>

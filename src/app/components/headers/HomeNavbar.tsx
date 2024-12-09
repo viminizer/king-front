@@ -81,7 +81,11 @@ export function HomeNavbar(props: HomeNavbarProps) {
 				<Stack className="menu">
 					<Box>
 						<NavLink to="/">
-							<img src="icons/burak.svg" className="brand-logo" alt="brand-logo" />
+							<img
+								src="https://ml8lsmj0ltnv.i.optimole.com/w:200/h:145/q:mauto/f:avif/https://www.kingkebab.co.kr/wp-content/uploads/2023/03/cropped-kinglogo.png"
+								className="brand-logo"
+								alt="brand-logo"
+							/>
 						</NavLink>
 					</Box>
 					<Stack className="links">

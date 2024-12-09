@@ -26,12 +26,12 @@ export function NewDishes() {
 									const imagePath = `${serverApi}/${ele.productImages[0]}`;
 									const sizeVolume =
 										ele.productCollection === ProductCollection.DRINK
-											? ele.productVolume + " l"
-											: ele.productSize + " size";
+											? ele.productVolume + " L"
+											: ele.productSize + " SIZE";
 									return (
 										<Card key={ele._id} variant="outlined" className="card">
 											<CardOverflow>
-												<div className="product-sale">{sizeVolume}</div>
+												<div className="product-scale">{sizeVolume}</div>
 												<AspectRatio ratio="1">
 													<img src={imagePath} alt="" />
 												</AspectRatio>

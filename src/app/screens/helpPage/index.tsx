@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import Tab from "@mui/material/Tab";
 import Accordion from "@mui/material/Accordion";
@@ -20,6 +20,9 @@ export default function HelpPage() {
 	const handleChange = (e: React.SyntheticEvent, newValue: string) => {
 		setValue(newValue);
 	};
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	return (
 		<div className={"help-page"}>

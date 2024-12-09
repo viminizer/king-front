@@ -68,6 +68,7 @@ export default function PopularDishes() {
 												<Typography
 													startDecorator={<DescriptionOutlined />}
 													textColor="neutral.300"
+													className="prod-desc"
 												>
 													{ele.productDesc}
 												</Typography>

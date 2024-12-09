@@ -1,19 +1,20 @@
 import React from "react";
 import { Box, Container, Stack } from "@mui/material";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Facebook, Instagram, YouTube } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import MuiLink from "@material-ui/core/Link";
 
 const Footers = styled.div`
 	width: 100%;
 	height: 590px;
 	display: flex;
-	background: #343434;
+	background: #f3f3f5;
 	background-size: cover;
 `;
 
 export default function Footer() {
 	const authMember = null;
-
 	return (
 		<Footers>
 			<Container>
@@ -23,15 +24,20 @@ export default function Footer() {
 							<img width={"100px"} src={"/icons/burak.svg"} />
 						</Box>
 						<Box className={"foot-desc-txt"}>
-							Focusing on the gourmet Turkish breakfast as well as the youth
-							society, CZN Burak Gurme aims to bring Turkish cuisine back. CZN
-							Burak Gurme creates an illusion with its cuisine.
+							Focusing on the gourmet Turkish breakfast as well as the youth society, CZN
+							Burak Gurme aims to bring Turkish cuisine back. CZN Burak Gurme creates an
+							illusion with its cuisine.
 						</Box>
 						<Box className="sns-context">
-							<img src={"/icons/facebook.svg"} />
-							<img src={"/icons/twitter.svg"} />
-							<img src={"/icons/instagram.svg"} />
-							<img src={"/icons/youtube.svg"} />
+							<MuiLink href={"https://instagram.com/kingkebab.korea"} target="_blank">
+								<Facebook className="sns-icon" />
+							</MuiLink>
+							<MuiLink href={"https://instagram.com/kingkebab.korea"} target="_blank">
+								<Instagram className="sns-icon" />
+							</MuiLink>
+							<MuiLink href={"https://instagram.com/kingkebab.korea"} target="_blank">
+								<YouTube className="sns-icon" />
+							</MuiLink>
 						</Box>
 					</Stack>
 					<Stack sx={{ ml: "288px" }} flexDirection={"row"}>

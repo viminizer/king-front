@@ -18,6 +18,7 @@ import { Container, Stack, Box } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { serverApi } from "../../../libs/config";
 import { CartItem } from "../../../libs/types/search";
+import { useGlobals } from "../../hooks/useGlobals";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
@@ -51,8 +52,10 @@ export default function ChosenProduct(props: ChosenProductProps) {
 	const { chosenProduct } = useSelector(chosenProductRetriever);
 	const { restaurant } = useSelector(restaurantRetriever);
 	const { productId } = useParams<{ productId: string }>();
+	const { setActiveTab } = useGlobals();
 
 	useEffect(() => {
+		setActiveTab("products");
 		const product = new ProductService();
 		const restaurant = new MemberService();
 		product
@@ -75,7 +78,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
 	if (!chosenProduct) return null;
 	return (
 		<div className={"chosen-product"}>
-			<Box className={"title"}>Product Detail</Box>
+			<Box className={"title"}>Product Details</Box>
 			<Container className={"product-container"}>
 				<Stack className={"chosen-product-slider"}>
 					<Swiper

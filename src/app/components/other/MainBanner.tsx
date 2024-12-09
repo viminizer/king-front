@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { Box, Container, Grid, Typography, Button } from "@mui/material";
-import "../../../css/main-banner.css";
 import ReusableButton from "./ResusableButton";
+import { Box, Container, Grid, Typography, Button } from "@mui/material";
 import { useHistory } from "react-router-dom";
 import { useGlobals } from "../../hooks/useGlobals";
+import "../../../css/main-banner.css";
 
 const MainBanner = () => {
 	const history = useHistory();

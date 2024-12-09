@@ -1,20 +1,13 @@
 import Basket from "./Basket";
-import {
-	Box,
-	Button,
-	Container,
-	ListItemIcon,
-	Menu,
-	MenuItem,
-	Stack,
-} from "@mui/material";
+import ReusableButton from "../other/ResusableButton";
+import { Box, Container, ListItemIcon, Menu, MenuItem, Stack } from "@mui/material";
 import { NavLink, useLocation } from "react-router-dom";
 import { CartItem } from "../../../libs/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
-import { serverApi } from "../../../libs/config";
+import { serverApi, slashRemover } from "../../../libs/config";
 import { Logout } from "@mui/icons-material";
-import ReusableButton from "../other/ResusableButton";
 import { useEffect, useState } from "react";
+
 interface HomeNavbarProps {
 	anchorEl: HTMLElement | null;
 	cartItems: CartItem[];
@@ -27,14 +20,6 @@ interface HomeNavbarProps {
 	handleCloseLogout: () => void;
 	handleLogoutClick: (e: React.MouseEvent<HTMLElement>) => void;
 	handleLogoutRequest: () => void;
-}
-
-function slashRemover(str: string): string {
-	const arr = str.split("");
-	if (arr[0] === "/") {
-		arr.shift();
-		return arr.join("");
-	} else return arr.join("");
 }
 
 export function HomeNavbar(props: HomeNavbarProps) {

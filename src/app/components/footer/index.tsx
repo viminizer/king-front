@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, Container, Stack } from "@mui/material";
 import styled from "styled-components";
+import MuiLink from "@material-ui/core/Link";
+import { Box, Container, Stack } from "@mui/material";
 import { Facebook, Instagram, YouTube } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import MuiLink from "@material-ui/core/Link";
 import { useGlobals } from "../../hooks/useGlobals";
 
 const Footers = styled.div`
@@ -22,7 +22,10 @@ export default function Footer() {
 				<Stack flexDirection={"row"} sx={{ mt: "94px" }}>
 					<Stack flexDirection={"column"} style={{ width: "340px" }}>
 						<Box>
-							<img width={"100px"} src={"/icons/burak.svg"} />
+							<img
+								height={"100px"}
+								src="https://ml8lsmj0ltnv.i.optimole.com/w:200/h:145/q:mauto/f:avif/https://www.kingkebab.co.kr/wp-content/uploads/2023/03/cropped-kinglogo.png"
+							/>
 						</Box>
 						<Box className={"foot-desc-txt"}>
 							Focusing on the gourmet Turkish breakfast as well as the youth society, King

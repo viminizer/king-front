@@ -8,17 +8,20 @@ import { useHistory } from "react-router-dom";
 import { useGlobals } from "../../hooks/useGlobals";
 import { MemberType } from "../../../libs/enums/member.enum";
 import { serverApi } from "../../../libs/config";
-import "../../../css/userPage.css";
 import { useEffect } from "react";
+import "../../../css/userPage.css";
 
 export default function UserPage() {
 	const history = useHistory();
 	const { authMember, setActiveTab } = useGlobals();
+
 	useEffect(() => {
 		setActiveTab("member-page");
 		window.scrollTo(0, 0);
 	}, []);
+
 	if (!authMember) history.push("/");
+
 	return (
 		<div className={"user-page"}>
 			<Container>

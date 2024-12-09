@@ -48,11 +48,13 @@
 }
 .nav-link:hover {
 	background: #f3f3f5;
+	cursor: pointer;
 	box-shadow: inset 8px 8px 12px #e2e2e2, inset -8px -8px 12px #ffffff;
 	color: #ff8243;
 }
 .active-link {
 	text-transform: capitalize;
+	cursor: pointer;
 	font-weight: 500;
 	border-radius: 30px;
 	padding: 5px 18px;
@@ -64,11 +66,13 @@
 }
 .active-link a {
 	text-decoration: none;
+	cursor: pointer;
 	color: #ff8243;
 }
 
 .home-navbar .nav-link a {
 	text-decoration: none;
+	cursor: pointer;
 	color: #0d0d25;
 }
 .home-navbar .nav-link a:hover {

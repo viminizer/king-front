@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import { retrievePopularDishes } from "./selector";
 import { serverApi } from "../../../libs/config";
 import { Product } from "../../../libs/types/product";
+import { useHistory } from "react-router-dom";
 
 const popularDishesRetriever = createSelector(retrievePopularDishes, (popularDishes) => ({
 	popularDishes,
@@ -20,7 +21,12 @@ const popularDishesRetriever = createSelector(retrievePopularDishes, (popularDis
 
 export default function PopularDishes() {
 	const { popularDishes } = useSelector(popularDishesRetriever);
+	const history = useHistory();
 
+	/**Handlers */
+	const chosenDishHandler = (id: string) => {
+		history.push(`/products/${id}`);
+	};
 	return (
 		<div className="popular-dishes-frame">
 			<Container>
@@ -32,7 +38,7 @@ export default function PopularDishes() {
 								const imagePath = `${serverApi}/${ele.productImages[0]}`;
 								return (
 									<CssVarsProvider key={ele._id}>
-										<Card className={"card"}>
+										<Card className={"card"} onClick={() => chosenDishHandler(ele._id)}>
 											<CardCover>
 												<img src={imagePath} alt="" />
 											</CardCover>

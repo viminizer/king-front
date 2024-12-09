@@ -21,8 +21,8 @@ import { createSelector } from "reselect";
 import { ProductCollection } from "../../../libs/enums/product.enum";
 import { useHistory } from "react-router-dom";
 import { CartItem } from "../../../libs/types/search";
-import "../../../css/products.css";
 import { useGlobals } from "../../hooks/useGlobals";
+import "../../../css/products.css";
 
 const actionDispatch = (dispatch: Dispatch) => ({
 	setProducts: (products: Product[]) => dispatch(setProducts(products)),

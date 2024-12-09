@@ -11,8 +11,8 @@ import TabPanel from "@mui/lab/TabPanel";
 import { Box, Container, Stack, Tabs } from "@mui/material";
 import { faq } from "../../../libs/data/faq";
 import { terms } from "../../../libs/data/terms";
-import "../../../css/help.css";
 import { useGlobals } from "../../hooks/useGlobals";
+import "../../../css/help.css";
 
 export default function HelpPage() {
 	const [value, setValue] = React.useState("1");

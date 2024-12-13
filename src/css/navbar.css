@@ -128,13 +128,11 @@
 
 .basket-frame {
 	position: relative;
-	padding: 10px 4px 0px 4px;
-	width: 450px;
+	padding: 10px 4px 0px 0px;
+	width: 500px;
 	height: auto;
 	display: flex;
 	flex-direction: column;
-	background: #f8f8ff;
-	border-radius: 16px;
 }
 
 .basket-frame .all-check-box {
@@ -144,10 +142,17 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	background: #d7b586;
 	border-width: 1px 0px;
-	border-style: solid;
-	border-color: #343434;
+	font-family: "Poppins";
+	font-weight: 500;
+}
+.basket-frame .cart-header {
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .basket-frame .basket-info-box {
@@ -158,13 +163,15 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .basket-info-box .product-img {
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
-	border-radius: 29px;
+	border-radius: 25px;
 }
 
 .basket-info-box .product-name {
@@ -173,13 +180,14 @@
 	font-family: "Poppins";
 	font-style: normal;
 	font-weight: 400;
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 30px;
 	color: #000000;
 }
 
 .basket-info-box .product-price {
-	width: 80px;
+	width: 130px;
+	margin-left: 10px;
 	font-family: "Poppins";
 	font-style: normal;
 	font-weight: 600;
@@ -189,13 +197,32 @@
 }
 
 .basket-info-box .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
-	padding: 6.5px 14px;
+	padding: 6px 10px;
 }
 
 .basket-info-box .css-ece9u5 {
 	min-width: 72px;
 }
 
+.basket-frame .remove {
+	border: none;
+	background: #ff8243;
+	box-shadow: 4px 4px 8px #d0d0d0;
+	cursor: pointer;
+	color: white;
+	font-weight: 400;
+	width: 20px;
+	height: 20px;
+}
+.basket-frame .add {
+	border: none;
+	background: #ff8243;
+	box-shadow: 4px 4px 8px #d0d0d0;
+	cursor: pointer;
+	color: white;
+	width: 20px;
+	height: 20px;
+}
 .basket-frame .cancel-btn {
 	position: absolute;
 	top: 33%;

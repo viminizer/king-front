@@ -5,12 +5,7 @@ import ProductService from "../../services/ProductService";
 import SearchIcon from "@mui/icons-material/Search";
 import { ChangeEvent, useEffect, useState } from "react";
 import { Box, Button, Container, Stack } from "@mui/material";
-import {
-	ArrowBack,
-	ArrowForward,
-	MonetizationOn,
-	RemoveRedEye,
-} from "@mui/icons-material";
+import { ArrowBack, ArrowForward, RemoveRedEye } from "@mui/icons-material";
 import { Dispatch } from "@reduxjs/toolkit";
 import { setProducts } from "./slice";
 import { Product, ProductInquiry } from "../../../libs/types/product";

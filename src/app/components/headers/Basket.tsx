@@ -61,20 +61,6 @@ export default function Basket(props: BasketProps) {
 
 	return (
 		<Box className={""}>
-			{/*	<IconButton
-				aria-label="cart"
-				id="basic-button"
-				aria-controls={open ? "basic-menu" : undefined}
-				aria-haspopup="true"
-				aria-expanded={open ? "true" : undefined}
-				onClick={handleClick}
-			>
-				<Badge badgeContent={cartItems.length} color="secondary">
-					<img src={"/icons/shopping-cart.svg"} />
-				</Badge>
-			</IconButton>
-			*/}
-			{/* Cart Icon */}
 			<IconButton
 				aria-label="cart"
 				id="basic-button"
@@ -128,7 +114,7 @@ export default function Basket(props: BasketProps) {
 						{cartItems.length === 0 ? (
 							<div>Cart is empty!</div>
 						) : (
-							<Stack flexDirection={"row"}>
+							<Stack className="cart-header">
 								<div>Cart Products</div>
 								<DeleteForever
 									sx={{ ml: "5px", cursor: "pointer" }}
@@ -152,7 +138,7 @@ export default function Basket(props: BasketProps) {
 										<img src={imagePath} className={"product-img"} />
 										<span className={"product-name"}>{item.name}</span>
 										<p className={"product-price"}>
-											${item.price} x {item.quantity}
+											₩{item.price} x {item.quantity}
 										</p>
 										<Box sx={{ minWidth: 120 }}>
 											<div className="col-2">

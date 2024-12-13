@@ -270,11 +270,8 @@ export function Products(props: ProductsProps) {
 												</Button>
 											</Stack>
 											<Box className="product-desc">
-												<span className="product-line">{product.productName}</span>
-												<div className="product-desc">
-													<MonetizationOn />
-													{product.productPrice}
-												</div>
+												<span className="product-title">{product.productName}</span>
+												<div className="product-desc">₩{product.productPrice}</div>
 											</Box>
 										</Stack>
 									);

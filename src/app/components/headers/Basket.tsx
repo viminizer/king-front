@@ -117,8 +117,13 @@ export default function Basket(props: BasketProps) {
 							<Stack className="cart-header">
 								<div>Cart Products</div>
 								<DeleteForever
-									sx={{ ml: "5px", cursor: "pointer" }}
-									color="primary"
+									sx={{
+										ml: "5px",
+										cursor: "pointer",
+										color: "#d00000",
+										width: "25px",
+										height: "25px",
+									}}
 									cursor="pointer"
 									onClick={() => onDeleteAll()}
 								/>
@@ -132,22 +137,22 @@ export default function Basket(props: BasketProps) {
 								const imagePath = `${serverApi}/${item.image}`;
 								return (
 									<Box className={"basket-info-box"} key={item._id}>
-										<div className={"cancel-btn"}>
-											<CancelIcon color={"primary"} onClick={() => onDelete(item)} />
-										</div>
 										<img src={imagePath} className={"product-img"} />
 										<span className={"product-name"}>{item.name}</span>
 										<p className={"product-price"}>
-											₩{item.price} x {item.quantity}
+											₩{item.price}000x {item.quantity}
 										</p>
 										<Box sx={{ minWidth: 120 }}>
 											<div className="col-2">
-												<button className="remove" onClick={() => onRemove(item)}>
+												<button className="add" onClick={() => onRemove(item)}>
 													-
 												</button>{" "}
 												<button className="add" onClick={() => onAdd(item)}>
 													+
 												</button>
+												<button className="add remove" onClick={() => onDelete(item)}>
+													x
+												</button>{" "}
 											</div>
 										</Box>
 									</Box>
@@ -158,12 +163,13 @@ export default function Basket(props: BasketProps) {
 					{cartItems.length !== 0 ? (
 						<Box className={"basket-order"}>
 							<span className={"price"}>
-								Total: ${totalPrice} ({itemsPrice} +{shippingCost})
+								Tot: ₩{totalPrice} ({itemsPrice} +{shippingCost})
 							</span>
 							<Button
 								startIcon={<ShoppingCartIcon />}
 								variant={"contained"}
 								onClick={proceedOrderHandler}
+								className="order-btn"
 							>
 								Order
 							</Button>

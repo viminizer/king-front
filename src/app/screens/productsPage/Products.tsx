@@ -95,19 +95,21 @@ export function Products(props: ProductsProps) {
 		history.push(`/products/${id}`);
 	};
 
+	console.log("ORDER", productSearch.order);
+
 	return (
 		<div className="products">
 			<Container sx={{ mt: "150px" }}>
 				<Stack flexDirection={"column"} alignItems={"center"}>
 					<Stack className={"avatar-big-box"}>
 						<Stack className={"top-text"}>
-							<p>Burak Restaurant</p>
+							<p>OUR MENU</p>
 							<Stack className={"single-search-big-box"}>
 								<input
 									type={"search"}
 									className={"single-search-input"}
 									name={"singleResearch"}
-									placeholder={"Type here"}
+									placeholder={"Search here"}
 									value={searchText}
 									onChange={(event) => {
 										setSearchText(event.target.value);
@@ -118,7 +120,6 @@ export function Products(props: ProductsProps) {
 								/>
 								<Button
 									className={"single-button-search"}
-									variant="contained"
 									endIcon={<SearchIcon />}
 									onClick={searchProductHandler}
 								>
@@ -131,24 +132,27 @@ export function Products(props: ProductsProps) {
 						<Stack className="dishes-filter-box">
 							<Button
 								variant="contained"
-								color={productSearch.order === "createdAt" ? "primary" : "secondary"}
-								className="order"
+								className={`order ${
+									productSearch.order === "createdAt" ? "active-order-button" : ""
+								}`}
 								onClick={() => searchOrderHandler("createdAt")}
 							>
 								New
 							</Button>
 							<Button
 								variant="contained"
-								color={productSearch.order === "productPrice" ? "primary" : "secondary"}
-								className="order"
+								className={`order ${
+									productSearch.order === "productPrice" ? "active-order-button" : ""
+								}`}
 								onClick={() => searchOrderHandler("productPrice")}
 							>
 								Price
 							</Button>
 							<Button
 								variant="contained"
-								color={productSearch.order === "productViews" ? "primary" : "secondary"}
-								className="order"
+								className={`order ${
+									productSearch.order === "productViews" ? "active-order-button" : ""
+								}`}
 								onClick={() => searchOrderHandler("productViews")}
 							>
 								Views
@@ -160,55 +164,55 @@ export function Products(props: ProductsProps) {
 							<div className="category-main">
 								<Button
 									variant="contained"
-									color={
+									className={`order ${
 										productSearch.productCollection === ProductCollection.OTHER
-											? "primary"
-											: "secondary"
-									}
+											? "active-order-button"
+											: ""
+									}`}
 									onClick={() => searchCollectionHandler(ProductCollection.OTHER)}
 								>
 									Other
 								</Button>
 								<Button
 									variant="contained"
-									color={
+									className={`order ${
 										productSearch.productCollection === ProductCollection.DESSERT
-											? "primary"
-											: "secondary"
-									}
+											? "active-order-button"
+											: ""
+									}`}
 									onClick={() => searchCollectionHandler(ProductCollection.DESSERT)}
 								>
 									Dessert
 								</Button>
 								<Button
 									variant="contained"
-									color={
+									className={`order ${
 										productSearch.productCollection === ProductCollection.DRINK
-											? "primary"
-											: "secondary"
-									}
+											? "active-order-button"
+											: ""
+									}`}
 									onClick={() => searchCollectionHandler(ProductCollection.DRINK)}
 								>
 									Drink
 								</Button>
 								<Button
 									variant="contained"
-									color={
+									className={`order ${
 										productSearch.productCollection === ProductCollection.SALAD
-											? "primary"
-											: "secondary"
-									}
+											? "active-order-button"
+											: ""
+									}`}
 									onClick={() => searchCollectionHandler(ProductCollection.SALAD)}
 								>
 									Salad
 								</Button>
 								<Button
 									variant="contained"
-									color={
+									className={`order ${
 										productSearch.productCollection === ProductCollection.DISH
-											? "primary"
-											: "secondary"
-									}
+											? "active-order-button"
+											: ""
+									}`}
 									onClick={() => searchCollectionHandler(ProductCollection.DISH)}
 								>
 									Dish
@@ -222,7 +226,7 @@ export function Products(props: ProductsProps) {
 									const sizeVolume =
 										product.productCollection === ProductCollection.DRINK
 											? product.productVolume + " L"
-											: product.productSize + " size";
+											: product.productSize + " SIZE";
 									return (
 										<Stack
 											key={product._id}

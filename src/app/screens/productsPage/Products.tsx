@@ -23,6 +23,7 @@ import { useHistory } from "react-router-dom";
 import { CartItem } from "../../../libs/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
 import "../../../css/products.css";
+import { branches } from "../../../libs/data/branches";
 
 const actionDispatch = (dispatch: Dispatch) => ({
 	setProducts: (products: Product[]) => dispatch(setProducts(products)),
@@ -302,20 +303,18 @@ export function Products(props: ProductsProps) {
 			</Container>
 			<div className={"brands-logo"}>
 				<Container className={"family-brands"}>
-					<Box className={"title"}>Our Family Brands</Box>
-					<Stack className={"brand-list"}>
-						<Box className={"brand-img"}>
-							<img src={"/img/gurme.webp"} />
-						</Box>
-						<Box className={"brand-img"}>
-							<img src={"/img/sweets.webp"} />
-						</Box>
-						<Box className={"brand-img"}>
-							<img src={"/img/seafood.webp"} />
-						</Box>
-						<Box className={"brand-img"}>
-							<img src={"/img/doner.webp"} />
-						</Box>
+					<Box className={"title"}>King Kebab Branches</Box>
+					<Stack className={"branch-list"}>
+						{branches.map((branch) => (
+							<Container className="card">
+								<img src={branch.img} />
+								<Box className="info">
+									<h1>{branch.name}</h1>
+									<p>{branch.address} </p>
+									<Button className="branch-button">Explore</Button>
+								</Box>
+							</Container>
+						))}
 					</Stack>
 				</Container>
 			</div>

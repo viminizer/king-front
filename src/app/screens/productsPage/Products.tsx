@@ -28,6 +28,8 @@ import { branches } from "../../../libs/data/branches";
 const actionDispatch = (dispatch: Dispatch) => ({
 	setProducts: (products: Product[]) => dispatch(setProducts(products)),
 });
+const defaultIframSrc =
+	"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d757.901178888223!2d126.99318345669143!3d37.53474312666402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca24c2f390b6f%3A0x395baa4b310e0016!2z7YK57LyA67ClIOydtO2DnOybkOygkCAtIEtpbmcgS2ViYWIgSXRhZXdvbiAtIEhhbGFs!5e0!3m2!1sen!2skr!4v1734115613420!5m2!1sen!2skr";
 
 const productsRetriever = createSelector(retrieveProducts, (products: Product[]) => ({
 	products,
@@ -48,6 +50,7 @@ export function Products(props: ProductsProps) {
 		productCollection: "" as ProductCollection,
 		search: "",
 	});
+	const [iframeSrc, setIframeSrc] = useState<string>(defaultIframSrc);
 	const [searchText, setSearchText] = useState<string>("");
 	const history = useHistory();
 	const { setActiveTab } = useGlobals();
@@ -99,6 +102,19 @@ export function Products(props: ProductsProps) {
 
 	const chosenDishHandler = (id: string) => {
 		history.push(`/products/${id}`);
+	};
+
+	const cardClickHandler = (id: string, src: string) => {
+		setIframeSrc(src);
+		const section: HTMLElement = document.getElementById(id)!;
+		const offset = window.innerHeight / 3;
+		const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+		const scrollPosition = sectionTop - offset + section.offsetHeight / 2;
+
+		window.scrollTo({
+			top: scrollPosition,
+			behavior: "smooth",
+		});
 	};
 
 	return (
@@ -303,17 +319,35 @@ export function Products(props: ProductsProps) {
 			</Container>
 			<div className={"brands-logo"}>
 				<Container className={"family-brands"}>
-					<Box className={"title"}>King Kebab Branches</Box>
+					<Box className={"title"}>Our Branches</Box>
 					<Stack className={"branch-list"}>
 						{branches.map((branch) => (
-							<Container className="card">
+							<Box
+								className="card"
+								onClick={() => cardClickHandler("address", branch.iframeSrc)}
+							>
 								<img src={branch.img} />
+								<div className="layer"></div>
 								<Box className="info">
 									<h1>{branch.name}</h1>
 									<p>{branch.address} </p>
-									<Button className="branch-button">Explore</Button>
+									<p>OPEN: {branch.hours} </p>
+									<Button
+										href={branch.naverLink}
+										target="_blank"
+										className="branch-button"
+									>
+										Naver Map
+									</Button>
+									<Button
+										onClick={() => cardClickHandler("address", branch.iframeSrc)}
+										className="branch-button"
+										style={{ background: "#4285F4" }}
+									>
+										Google Maps
+									</Button>
 								</Box>
-							</Container>
+							</Box>
 						))}
 					</Stack>
 				</Container>
@@ -321,10 +355,13 @@ export function Products(props: ProductsProps) {
 			<div className="address">
 				<Container>
 					<Stack className="address-area">
-						<Box className="title">Our Address</Box>
+						<Box className="title" id="address">
+							Our Address
+						</Box>
 						<iframe
-							style={{ marginTop: "60px" }}
-							src="https://www.google.com/maps/d/u/0/embed?mid=1XK-f2FfchtNWmKA9DGrUzHvnTD8&f=q&source=s_q&hl=pt-BR&geocode&q=Anam-dong%20Seongbuk-Gu%2C%20Seoul%2C%20136-701%20Korea&ie=UTF8&oe=UTF8&msa=0&sll=37.585838%2C127.021353&sspn=0.020749%2C0.028168&ll=37.59253999999999%2C127.02774499999997&spn=0.00777%2C0.013797&z=16&output=embed"
+							style={{ marginTop: "60px", marginBottom: "50px" }}
+							src={iframeSrc}
+							loading="lazy"
 							width="1320"
 							height="500"
 							referrerPolicy="no-referrer-when-downgrade"

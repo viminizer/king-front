@@ -1,3 +1,6 @@
+html {
+	scroll-behavior: smooth;
+}
 .products-page {
 	position: relative;
 	width: 100%;
@@ -182,17 +185,6 @@
 	box-shadow: 28px 28px 45px #d4d4d4;
 }
 
-@keyframes fadeInUp {
-	from {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0px);
-	}
-}
-
 .products-page .product-card .product-img {
 	position: relative;
 	width: 273px;
@@ -342,6 +334,7 @@
 	background: #f8f8ff;
 }
 
+/* address area*/
 .products-page .products .address .address-area {
 	margin-top: 60px;
 	display: flex;
@@ -356,7 +349,7 @@
 	font-size: 36px;
 	line-height: 43px;
 }
-
+/*branches section*/
 .products-page .products .brands-logo {
 	margin-top: 60px;
 	width: 100%;
@@ -391,40 +384,50 @@
 	overflow: hidden;
 	transition: 0.5s;
 	cursor: pointer;
+	box-shadow: 28px 28px 45px #d4d4d4;
 }
 .products-page .products .brands-logo .card img {
 	width: 100%;
 	height: 100%;
-	aspect-ratio: 3/4;
 	object-fit: cover;
-	pointer-events: none;
 	transition: 0.5s;
+	padding: 0px;
+}
+.products-page .products .brands-logo .card .layer {
+	background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 75%;
+	transition: 0.3s;
+	opacity: 0;
 }
 
 .products-page .products .brands-logo .card .info {
 	position: absolute;
-	bottom: -50%;
+	bottom: -90%;
 	padding: 15px;
-	opacity: 0;
+	opacity: 1;
 	transition: 0.5s bottom, 1.75s opacity;
 	color: white;
+	z-index: 1;
 }
 .products-page .products .brands-logo .card .info p {
 	font-size: 15px;
 	margin-top: 3px;
 }
 .brands-logo .card .info .branch-button {
-	background: #490ccc;
+	background: #2db400;
 	border: none;
 	padding: 8px, 12px;
 	font-weight: bold;
 	border-radius: 8px;
-	margin-top: 8px;
+	margin-right: 8px;
+	color: white;
 }
 .brands-logo .card:hover,
 .brands-logo .card:hover img,
-.brands-logo .card:hover,
-.layer {
+.products-page .products .brands-logo .card .layer {
 	transform: scale(1.1);
 }
 .products-page .products .brands-logo .card:hover > .layer {
@@ -450,17 +453,7 @@
 	font-size: 36px;
 	line-height: 43px;
 	margin-bottom: 50px;
-	color: #d7b686;
-}
-
-.products-page .products .brands-logo .brand-img {
-	margin-top: 40px;
-	padding: 25px;
-	width: 260px;
-	height: 350px;
-	display: flex;
-	box-shadow: 0px 1px 15px 5px #c8b3b340;
-	border-radius: 25px;
+	color: #ff8243;
 }
 
 /** ChosenProduct **/
@@ -631,4 +624,15 @@
 	font-size: 36px;
 	line-height: 43px;
 	margin-top: 40px;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
 }

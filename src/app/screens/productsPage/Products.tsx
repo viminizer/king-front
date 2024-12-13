@@ -44,7 +44,7 @@ export function Products(props: ProductsProps) {
 		page: 1,
 		limit: 8,
 		order: "createdAt",
-		productCollection: ProductCollection.DISH,
+		productCollection: "" as ProductCollection,
 		search: "",
 	});
 	const [searchText, setSearchText] = useState<string>("");
@@ -71,8 +71,13 @@ export function Products(props: ProductsProps) {
 	/**HANDLERS */
 	const searchCollectionHandler = (collection: ProductCollection) => {
 		productSearch.page = 1;
-		productSearch.productCollection = collection;
-		setProductSearch({ ...productSearch });
+		if (productSearch.productCollection === collection) {
+			productSearch.productCollection = "" as ProductCollection;
+			setProductSearch({ ...productSearch });
+		} else {
+			productSearch.productCollection = collection;
+			setProductSearch({ ...productSearch });
+		}
 	};
 
 	const searchOrderHandler = (order: string) => {
@@ -94,8 +99,6 @@ export function Products(props: ProductsProps) {
 	const chosenDishHandler = (id: string) => {
 		history.push(`/products/${id}`);
 	};
-
-	console.log("ORDER", productSearch.order);
 
 	return (
 		<div className="products">
@@ -292,7 +295,7 @@ export function Products(props: ProductsProps) {
 										next: ArrowForward,
 									}}
 									{...item}
-									color="secondary"
+									color="primary"
 								/>
 							)}
 							onChange={paginationHandler}

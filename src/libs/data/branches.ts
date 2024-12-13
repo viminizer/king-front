@@ -19,7 +19,7 @@ export const branches = [
 			"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.16253457911!2d126.91944287715121!3d37.55123427204262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c999b8c11b171%3A0x3836675dd69ee30c!2sKing%20Kebab!5e0!3m2!1sen!2skr!4v1734115352636!5m2!1sen!2skr",
 	},
 	{
-		name: "Posco Branch",
+		name: "POSCO Branch",
 		address: "서울시 강남구 테헤란로 440, 지하1층",
 		hours: "10 a.m - 10 p.m",
 		img: "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230204_43%2F16755122817090df2K_JPEG%2FKakaoTalk_20230204_205912008_23.jpg",

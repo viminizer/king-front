@@ -28,9 +28,8 @@ const MainBanner = () => {
 									Welcome to <span>King Kebab</span>
 								</Typography>
 								<Typography className="banner-description">
-									Step into the royal court of flavor at King Kebab, where every bite
-									reigns supreme! Our restaurant specializes in authentic Turkish cuisine,
-									bringing you a feast fit for a king.
+									The real taste of Kebab. Experience best-of-class halal food & Turkish
+									cuisine.
 								</Typography>
 								<Typography className="banner-description">
 									Join us for a truly majestic dining experience—because at King Kebab,

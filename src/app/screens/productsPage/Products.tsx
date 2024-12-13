@@ -24,6 +24,7 @@ import { CartItem } from "../../../libs/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
 import "../../../css/products.css";
 import { branches } from "../../../libs/data/branches";
+import { T } from "../../../libs/types/common";
 
 const actionDispatch = (dispatch: Dispatch) => ({
 	setProducts: (products: Product[]) => dispatch(setProducts(products)),
@@ -51,6 +52,7 @@ export function Products(props: ProductsProps) {
 		search: "",
 	});
 	const [iframeSrc, setIframeSrc] = useState<string>(defaultIframSrc);
+	const [addressName, setAddressName] = useState<string>("Itaewon Branch");
 	const [searchText, setSearchText] = useState<string>("");
 	const history = useHistory();
 	const { setActiveTab } = useGlobals();
@@ -104,8 +106,9 @@ export function Products(props: ProductsProps) {
 		history.push(`/products/${id}`);
 	};
 
-	const cardClickHandler = (id: string, src: string) => {
-		setIframeSrc(src);
+	const cardClickHandler = (id: string, src: T) => {
+		setIframeSrc(src.iframeSrc);
+		setAddressName(src.name);
 		const section: HTMLElement = document.getElementById(id)!;
 		const offset = window.innerHeight / 3;
 		const sectionTop = section.getBoundingClientRect().top + window.scrollY;
@@ -317,15 +320,12 @@ export function Products(props: ProductsProps) {
 					</Stack>
 				</Stack>
 			</Container>
-			<div className={"brands-logo"}>
-				<Container className={"family-brands"}>
+			<div className={"branches"}>
+				<Container className={"branches-container"}>
 					<Box className={"title"}>Our Branches</Box>
 					<Stack className={"branch-list"}>
 						{branches.map((branch) => (
-							<Box
-								className="card"
-								onClick={() => cardClickHandler("address", branch.iframeSrc)}
-							>
+							<Box className="card" onClick={() => cardClickHandler("address", branch)}>
 								<img src={branch.img} />
 								<div className="layer"></div>
 								<Box className="info">
@@ -340,7 +340,7 @@ export function Products(props: ProductsProps) {
 										Naver Map
 									</Button>
 									<Button
-										onClick={() => cardClickHandler("address", branch.iframeSrc)}
+										onClick={() => cardClickHandler("address", branch)}
 										className="branch-button"
 										style={{ background: "#4285F4" }}
 									>
@@ -356,7 +356,7 @@ export function Products(props: ProductsProps) {
 				<Container>
 					<Stack className="address-area">
 						<Box className="title" id="address">
-							Our Address
+							{addressName} Address
 						</Box>
 						<iframe
 							style={{ marginTop: "60px", marginBottom: "50px" }}

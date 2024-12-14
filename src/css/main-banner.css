@@ -88,7 +88,7 @@
 	height: 100%;
 	background-size: cover;
 	background-position: center;
-	background-image: url("/public/img/main-b.jpg");
+	background-image: url("https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyNDA1MTlfMTE5%2FMDAxNzE2MTA2ODQxMjgx.d6tS7gsWrF_X1dvO2Vgganz0Q1bDVlvhFkEn0tikV_4g.7XWez6YUaW0EnAimDJtXqgF8Fv-RqUWdF2Boa6AlXvMg.JPEG%2F925DA625-8E0C-4A6B-951E-0D53947F87D3.jpeg%3Ftype%3Dw1500_60_sharpen");
 	box-shadow: 0 0px 20px rgba(36, 39, 37, 0.3);
 	animation: biani 4.5s linear infinite alternate;
 }

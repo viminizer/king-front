@@ -23,6 +23,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import ReusableButton from "../../components/other/ResusableButton";
 
 const actionDispatch = (dispatch: Dispatch) => ({
 	setChosenProduct: (product: Product) => dispatch(setChosenProduct(product)),
@@ -104,7 +105,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
 						<span className={"resto-name"}>{restaurant?.memberNick}</span>
 						<span className={"resto-name"}>{restaurant?.memberPhone}</span>
 						<Box className={"rating-box"}>
-							<Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+							<Rating name="half-rating" defaultValue={4.5} precision={0.5} />
 							<div className={"evaluation-box"}>
 								<div className={"product-view"}>
 									<RemoveRedEyeIcon sx={{ mr: "10px" }} />
@@ -117,15 +118,15 @@ export default function ChosenProduct(props: ChosenProductProps) {
 								? chosenProduct?.productDesc
 								: "No description for this product"}
 						</p>
-						<Divider height="1" width="100%" bg="#000000" />
 						<div className={"product-price"}>
 							<span>Price:</span>
-							<span>${chosenProduct.productPrice}</span>
+							<span>₩{chosenProduct.productPrice}</span>
 						</div>
 						<div className={"button-box"}>
-							<Button
-								variant="contained"
-								onClick={() =>
+							<ReusableButton
+								width={400}
+								height={45}
+								handleClick={() =>
 									onAdd({
 										_id: chosenProduct._id,
 										name: chosenProduct.productName,
@@ -136,7 +137,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
 								}
 							>
 								Add To Basket
-							</Button>
+							</ReusableButton>
 						</div>
 					</Box>
 				</Stack>

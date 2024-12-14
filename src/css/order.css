@@ -33,9 +33,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: #f8f8ff;
-	box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25),
-		inset -5px 0px 10px 10px rgb(25 25 112 / 20%);
+	background: #f8f8f8;
+	box-shadow: inset 10px 10px 8px #dadada, inset -9px -9px 11px #ffffff;
 	border-radius: 16px;
 	margin-bottom: 25px;
 }
@@ -80,7 +79,7 @@
 }
 .order-page .order-info-box .order-user-name {
 	margin-top: 10px;
-	font-family: "Commissioner";
+	font-family: "Poppins";
 	font-style: normal;
 	font-weight: 500;
 	font-size: 28px;
@@ -89,10 +88,10 @@
 }
 
 .order-page .order-info-box .order-user-prof {
-	font-family: "Commissioner";
+	font-family: "Poppins";
 	font-style: normal;
 	font-weight: 500;
-	font-size: 20px;
+	font-size: 15px;
 	line-height: 36px;
 	color: #a1a1a1;
 }
@@ -118,16 +117,17 @@
 	padding: 10px;
 	width: 100%;
 	height: 40px;
-	background: #f5f5f5;
 	border-radius: 10px;
 	font-family: "Nunito";
 	font-style: normal;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 22px;
-	border: 0.5px solid #b3a6a6;
+	border: none;
 	letter-spacing: -0.02em;
 	color: #434141;
+	background: #f8f8f8;
+	box-shadow: inset 6px 6px 8px #dadada, inset -6px -6px 8px #ffffff;
 }
 
 .order-page .order-info-box .card-half-input {
@@ -142,9 +142,11 @@
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 22px;
-	border: 0.5px solid #b3a6a6;
+	border: none;
 	letter-spacing: -0.02em;
 	color: #434141;
+	background: #f8f8f8;
+	box-shadow: inset 6px 6px 8px #dadada, inset -6px -6px 8px #ffffff;
 }
 
 .order-page .order-info-box .cards-box {
@@ -177,11 +179,13 @@
 .order-page .order-main-content .order-main-box {
 	position: relative;
 	width: 100%;
-	max-height: 285px;
+	max-height: 280px;
 	margin-bottom: 25px;
-	background: #f8f8ff;
-	box-shadow: -13px 16px 4px rgba(0, 0, 0, 0.25), inset 0px -3px 20px 11px #18177033;
+	background: #f8f8f8;
+	break-inside: avoid;
+	box-shadow: inset 6px 6px 8px #dadada, inset -6px -6px 8px #ffffff;
 	border-radius: 16px;
+	animation: fadeInUp 0.4s ease-out backwards;
 }
 
 .order-page .order-main-content .order-main-box .order-box-scroll {
@@ -198,14 +202,14 @@
 }
 
 .order-page .order-main-content .order-main-box .order-box-scroll::-webkit-scrollbar {
-	width: 7px;
+	width: 5px;
 }
 
 .order-page
 	.order-main-content
 	.order-main-box
 	.order-box-scroll::-webkit-scrollbar-thumb {
-	background-color: #8989db;
+	background: #f8f8ff;
 	border-radius: 5px;
 }
 
@@ -232,7 +236,7 @@
 	width: 260px;
 	height: 36px;
 	margin-left: 20px;
-	font-family: "Commissioner";
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 22px;
@@ -252,7 +256,7 @@
 }
 
 .order-page .order-box-scroll .orders-name-price .price-box p {
-	font-family: "Poppins";
+	font-family: "Times New Roman", Times, serif;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 18px;
@@ -264,7 +268,8 @@
 	position: relative;
 	width: 100%;
 	height: 41px;
-	margin: 7px 0 7px 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -275,9 +280,11 @@
 }
 
 .order-page .order-main-content .total-price-box .cancel-button {
+	max-height: 40px;
 	border-radius: 10px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	max-height: 40px;
+	background: linear-gradient(120deg, #ff6b6b, #d63031);
+	color: #ffffff;
 }
 
 .order-page .order-main-content .total-price-box .pay-button {

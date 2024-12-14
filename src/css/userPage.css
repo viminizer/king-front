@@ -109,6 +109,7 @@
 .user-page .order-info-box .order-user-img .order-user-avatar {
 	width: 150px;
 	height: 150px;
+	object-fit: cover;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	border-radius: 37px;
 }
@@ -278,6 +279,7 @@
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
+	object-fit: cover;
 }
 
 .user-page .settings .media_change-box {

@@ -37,6 +37,7 @@
 	box-shadow: inset 10px 10px 8px #dadada, inset -9px -9px 11px #ffffff;
 	border-radius: 16px;
 	margin-bottom: 25px;
+	border: 1px solid #bfbfbf;
 }
 
 .order-page .order-right .order-info-box .member-box {
@@ -124,7 +125,7 @@
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 22px;
-	border: none;
+	border: 1px solid #bfbfbf;
 	letter-spacing: -0.02em;
 	color: #434141;
 	background: #f8f8f8;
@@ -143,7 +144,7 @@
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 22px;
-	border: none;
+	border: 1px solid #bfbfbf;
 	letter-spacing: -0.02em;
 	color: #434141;
 	background: #f8f8f8;
@@ -186,6 +187,7 @@
 	break-inside: avoid;
 	box-shadow: inset 6px 6px 8px #dadada, inset -6px -6px 8px #ffffff;
 	border-radius: 16px;
+	border: 1px solid #bfbfbf;
 	animation: fadeInUp 0.4s ease-out backwards;
 }
 

@@ -50,7 +50,7 @@ function App() {
 
   return (
     <>
-      {location.pathname !== "/login" ? (
+      {location.pathname !== "/sd" ? (
         <HomeNavbar
           cartItems={cartItems}
           onAdd={onAdd}
@@ -81,7 +81,7 @@ function App() {
         <Route path="/help">
           <HelpPage />
         </Route>
-        <Route path="/login">
+        <Route path="/signin">
           <LoginPage />
         </Route>
         <Route path="/">

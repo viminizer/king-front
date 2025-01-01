@@ -70,6 +70,12 @@
 	color: #ff8243;
 }
 
+.reusable-btn-active {
+	border-color: #0d0d25;
+	box-shadow: inset 9px 9px 12px #cccccc, inset -9px -9px 12px #ffffff;
+	color: #ff8243;
+}
+
 .home-navbar .nav-link a {
 	text-decoration: none;
 	cursor: pointer;

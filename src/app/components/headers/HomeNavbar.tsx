@@ -37,8 +37,6 @@ export function HomeNavbar(props: HomeNavbarProps) {
     onDelete,
     onDeleteAll,
     onRemove,
-    setSignupOpen,
-    setLoginOpen,
     anchorEl,
     handleCloseLogout,
     handleLogoutRequest,
@@ -68,8 +66,9 @@ export function HomeNavbar(props: HomeNavbarProps) {
     else setIsScrolled(false);
   };
 
-  const loginClickHandler = () => {
-    history.push("login");
+  const signinClickHandler = () => {
+    setActiveTab("signin");
+    history.push("signin");
   };
 
   return (
@@ -136,11 +135,14 @@ export function HomeNavbar(props: HomeNavbarProps) {
             {!authMember ? (
               <Box>
                 <ReusableButton
+                  className={
+                    activeTab === "signin" ? "reusable-btn-active" : ""
+                  }
                   width={150}
                   height={40}
-                  handleClick={() => loginClickHandler()}
+                  handleClick={() => signinClickHandler()}
                 >
-                  Login
+                  Sign in
                 </ReusableButton>
               </Box>
             ) : (

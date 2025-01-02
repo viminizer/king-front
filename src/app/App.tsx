@@ -50,23 +50,19 @@ function App() {
 
   return (
     <>
-      {location.pathname !== "/sd" ? (
-        <HomeNavbar
-          cartItems={cartItems}
-          onAdd={onAdd}
-          onDelete={onDelete}
-          onDeleteAll={onDeleteAll}
-          onRemove={onRemove}
-          setSignupOpen={setSignupOpen}
-          setLoginOpen={setLoginOpen}
-          anchorEl={anchorEl}
-          handleLogoutClick={handleLogoutClick}
-          handleCloseLogout={handleCloseLogout}
-          handleLogoutRequest={handleLogoutRequest}
-        />
-      ) : (
-          <></>
-        )}
+      <HomeNavbar
+        cartItems={cartItems}
+        onAdd={onAdd}
+        onDelete={onDelete}
+        onDeleteAll={onDeleteAll}
+        onRemove={onRemove}
+        setSignupOpen={setSignupOpen}
+        setLoginOpen={setLoginOpen}
+        anchorEl={anchorEl}
+        handleLogoutClick={handleLogoutClick}
+        handleCloseLogout={handleCloseLogout}
+        handleLogoutRequest={handleLogoutRequest}
+      />
       {location.pathname === "/" ? <MainBanner /> : <></>}
       <Switch>
         <Route path="/products">

@@ -1,5 +1,5 @@
 import MemberService from "../../services/MemberService";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Messages } from "../../../libs/config";
 import { sweetErrorHandling } from "../../../libs/sweetAlert";
@@ -16,6 +16,10 @@ const LoginPage = () => {
   const [memberPassword, setMemberPassword] = useState<string>("");
   const { setAuthMember } = useGlobals();
   const history = useHistory();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   /** HANDLERS */
   const singinHandler = () => {

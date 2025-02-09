@@ -10,23 +10,26 @@ import { store } from "./app/store";
 import { ThemeProvider } from "@mui/material/styles";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./css/index.css";
+import { SocketProvider } from "./app/context/SocketContext";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
 
 root.render(
-	<React.StrictMode>
-		<Provider store={store}>
-			<ContextProvider>
-				<ThemeProvider theme={theme}>
-					<CssBaseline />
-					<Router>
-						<App />
-					</Router>
-				</ThemeProvider>
-			</ContextProvider>
-		</Provider>
-	</React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
+      <ContextProvider>
+        <SocketProvider>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Router>
+              <App />
+            </Router>
+          </ThemeProvider>
+        </SocketProvider>
+      </ContextProvider>
+    </Provider>
+  </React.StrictMode>,
 );
 
 reportWebVitals();

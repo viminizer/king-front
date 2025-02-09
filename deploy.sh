@@ -9,7 +9,7 @@ npm i yarn -g
 yarn global add serve
 yarn
 yarn run build
-pm2 start "yarn run start:prod" --name=BURAK-REACT
+pm2 start "yarn run start:prod" --name=KING-REACT
 
 #DEVELOPMENT
 # git reset --hard

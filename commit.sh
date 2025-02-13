@@ -1,6 +1,7 @@
 #!/bin/bash
 
 git checkout develop
+git merge master
 git add .
 git status
 

@@ -40,7 +40,7 @@ const MainBanner = () => {
                   width={250}
                   handleClick={checkMenuHandler}
                 >
-                  Check our menu
+                  Order Now
                 </ReusableButton>
               </Box>
             </Grid>
@@ -50,15 +50,6 @@ const MainBanner = () => {
               <Box className="banner-img-wp">
                 <Box className="banner-img"></Box>
               </Box>
-              {/* <Box className="banner-img-text"> */}
-              {/* 	<Typography variant="h5" className="h5-title"> */}
-              {/* 		Mix Grill Kebab */}
-              {/* 	</Typography> */}
-              {/* 	<Typography className="banner-description"> */}
-              {/* 		Mouthwatering assortment of perfectly grilled lamb and chicken marinated */}
-              {/* 		in traditional spices. */}
-              {/* 	</Typography> */}
-              {/* </Box> */}
             </Grid>
           </Grid>
         </Container>
